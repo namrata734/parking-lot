@@ -5,6 +5,7 @@ import com.example.parkinglot.entity.Ticket;
 import java.util.HashMap;
 
 public class MapLoader {
+
     public static int insertIntoMap(Ticket ticket, HashMap<Integer, Ticket> vehicleMap, int key) throws Exception {
 
         if(vehicleMap == null) {
@@ -25,11 +26,11 @@ public class MapLoader {
             vehicleMap.remove(key);
         }
     }
+
     public static Ticket getTicketDetails(int key, HashMap<Integer, Ticket> vehicleMap){
         if (vehicleMap != null && vehicleMap.containsKey(key)){
             return vehicleMap.get(key);
         }
         return null;
     }
-
 }

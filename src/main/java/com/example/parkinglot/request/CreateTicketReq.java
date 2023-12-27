@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateTicketReq {
     private String vehicleType;
+    private int vehicleNo;
 }
