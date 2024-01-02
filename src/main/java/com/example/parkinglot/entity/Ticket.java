@@ -13,6 +13,7 @@ public class Ticket {
     private LocalDateTime dateTime;
     private String vehicleType;
     private int slotNumber;
+    private int vehicleNumber;
 }
 
 

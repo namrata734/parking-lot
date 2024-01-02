@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 @Component
 public class HeavyVehicle {
+
     HashMap<Integer, Ticket> heavyVehicleMap = new HashMap<>();
     private int key = 1;
 
@@ -22,6 +23,7 @@ public class HeavyVehicle {
     public Ticket getHeavyVehicleTicketDetails(int key){
        return MapLoader.getTicketDetails(key, heavyVehicleMap);
     }
+
     public int getSlot(){
         return key;
     }

@@ -19,7 +19,12 @@ public class ParkingController {
     }
 
     @DeleteMapping("/deleteTicket/{slot}/{vehicleType}")
-    public void deleteTicket(@PathVariable(name = "slot") int slot, @PathVariable(name = "vehicleType") String vehicleType){
-        ticketService.onExit(slot, vehicleType);
+    public ResponseEntity<Integer> deleteTicket(@PathVariable(name = "slot") int slot, @PathVariable(name = "vehicleType") String vehicleType){
+        return ResponseEntity.ok(ticketService.onExit(slot, vehicleType));
+    }
+
+    @GetMapping("/getPass/{vehicleNo}/{days}/{vehicleType}")
+    public ResponseEntity<Integer> getPass(@PathVariable(name = "vehicleNo") int vehicleNo, @PathVariable(name = "days") int days,@PathVariable(name = "vehicleType") String vehicleType){
+        return ResponseEntity.ok(ticketService.addPass(vehicleNo, days, vehicleType));
     }
 }
